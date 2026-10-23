@@ -26,6 +26,7 @@ app.use("/api/combos", require("./routes/comboRoutes"));
 app.use("/api/orders", require("./routes/orderRoutes"));
 app.use("/api/contact", require("./routes/contactRoutes"));
 app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/feedback", require("./routes/feedbackRoutes"));
 app.use((req, res) => res.status(404).json({ message: "API route not found" }));
 app.use((err, req, res, next) => {
   console.error(err);

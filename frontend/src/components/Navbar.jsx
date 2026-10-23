@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fitfuel-navbar sticky-top">
       <div className="container">
-        <Link className="navbar-brand fitfuel-logo" to="/">
+        <Link className="navbar-brand fitfuel-logo" to="/home">
           <span className="logo-icon">🥗</span> FitFuel
         </Link>
         <button
@@ -22,7 +22,7 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="fitfuelNavbar">
           <ul className="navbar-nav ms-auto align-items-lg-center">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/" end>
+              <NavLink className="nav-link" to="/home" end>
                 Home
               </NavLink>
             </li>

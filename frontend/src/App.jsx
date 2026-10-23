@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
@@ -10,37 +10,137 @@ import Cart from "./pages/Cart.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import OrderSuccess from "./pages/OrderSuccess.jsx";
 import Contact from "./pages/Contact.jsx";
+import Combos from "./pages/Combos.jsx";
+
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
-
-import Combos from "./pages/Combos";
 
 import "./App.css";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="app-wrapper">
-        <Navbar />
+      <Routes>
+        {/* Open Login page when the website starts */}
+        <Route
+          path="/"
+          element={<Navigate to="/login" replace />}
+        />
 
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/combos" element={<Combos />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/order-success" element={<OrderSuccess />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Routes>
-        </main>
+        {/* Login page */}
+        <Route
+          path="/login"
+          element={<Login />}
+        />
 
-        <Footer />
-      </div>
+        {/* Register page */}
+        <Route
+          path="/register"
+          element={<Register />}
+        />
+
+        {/* Home page */}
+        <Route
+          path="/home"
+          element={
+            <>
+              <Navbar />
+              <Home />
+              <Footer />
+            </>
+          }
+        />
+
+        {/* About page */}
+        <Route
+          path="/about"
+          element={
+            <>
+              <Navbar />
+              <About />
+              <Footer />
+            </>
+          }
+        />
+
+        {/* Products page */}
+        <Route
+          path="/products"
+          element={
+            <>
+              <Navbar />
+              <Products />
+              <Footer />
+            </>
+          }
+        />
+
+        {/* Combos page */}
+        <Route
+          path="/combos"
+          element={
+            <>
+              <Navbar />
+              <Combos />
+              <Footer />
+            </>
+          }
+        />
+
+        {/* Cart page */}
+        <Route
+          path="/cart"
+          element={
+            <>
+              <Navbar />
+              <Cart />
+              <Footer />
+            </>
+          }
+        />
+
+        {/* Checkout page */}
+        <Route
+          path="/checkout"
+          element={
+            <>
+              <Navbar />
+              <Checkout />
+              <Footer />
+            </>
+          }
+        />
+
+        {/* Order success page */}
+        <Route
+          path="/order-success"
+          element={
+            <>
+              <Navbar />
+              <OrderSuccess />
+              <Footer />
+            </>
+          }
+        />
+
+        {/* Contact page */}
+        <Route
+          path="/contact"
+          element={
+            <>
+              <Navbar />
+              <Contact />
+              <Footer />
+            </>
+          }
+        />
+
+        {/* Unknown routes redirect to Login */}
+        <Route
+          path="*"
+          element={<Navigate to="/login" replace />}
+        />
+      </Routes>
     </BrowserRouter>
   );
 }
