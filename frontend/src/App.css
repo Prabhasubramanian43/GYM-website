@@ -1511,3 +1511,115 @@ main {
     font-size: 25px;
   }
 }
+/* Mobile and Tablet Responsive Fix */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.home-hero {
+  overflow: hidden;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.feature-card {
+  height: 100%;
+}
+
+@media (max-width: 991px) {
+  .fitfuel-navbar .navbar-collapse {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .fitfuel-nav-links {
+    width: 100%;
+  }
+
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+  }
+
+  .home-hero {
+    padding: 35px 0;
+  }
+
+  .hero-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-hero {
+    padding: 25px 0;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .hero-image {
+    height: 260px;
+  }
+
+  .hero-image-label {
+    right: 18px;
+    bottom: 18px;
+    left: 18px;
+    padding: 10px;
+  }
+
+  .feature-card .card-title {
+    font-size: 17px;
+  }
+
+  .delivery-banner h3 {
+    font-size: 21px;
+  }
+
+  .shop-button,
+  .about-button {
+    max-width: 100%;
+    font-size: 13px;
+  }
+
+  .fitfuel-footer {
+    padding: 35px 0 20px;
+  }
+}
